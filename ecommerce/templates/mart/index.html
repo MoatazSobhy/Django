@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  </head>
+  
+  <body >
+        
+        {% extends "mart/base.html" %}
+        {%block title%}
+        {% include "parts/navbar.html" %}
+        <h1>This is my mart app<h1/>
+        {% comment %} <h1>Hello {{name}}<h1/> {% endcomment %}
+        
+        {% comment %} {%for name in namelist%}
+            <h3>{{name}}</h3>
+        {%endfor%} {% endcomment %}
+
+        {% comment %} <h2>Items and Prices</h2>
+        {% for key, value in namedic.items%}
+            <h3>{{ key }}: {{ value }}</h3>
+        {% endfor %} {% endcomment %}
+
+        {% comment %} <h2>Items and Prices</h2>
+        {% for item, details in namedic2.items %}
+            <img src="{{ details.image_url }}" alt="{{ item }}" style="width:200px;">
+            <h3>{{ item }}: {{ details.price }}</h3>
+        {% endfor %} {% endcomment %}
+
+        <h2>Items and Prices</h2>
+        {%endblock title%}
+
+        {%block content%}
+        <form method="post">
+            {% csrf_token %}
+            {% for item, details in namedic2.items %}
+                <div>
+                    <input type="checkbox" id="{{ item }}" name="items" value="{{ item }}">
+                    <label for="{{ item }}">
+                        <img src="{{ details.image_url }}" alt="{{ item }}" style="width:200px;">
+                        {{ item }}: ${{ details.price }}
+                    </label>
+                </div>
+            {% endfor %}
+            {% comment %} <button type="submit">Submit</button> {% endcomment %}
+            <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                Submit
+            </button> 
+        </form>
+        <br/>
+        {% include "parts/footer.html" %}
+        {%endblock content%}
+  </body>
+  
+</html>
+
