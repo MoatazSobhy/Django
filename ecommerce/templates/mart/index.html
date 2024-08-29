@@ -32,7 +32,7 @@
         {%endblock title%}
 
         {%block content%}
-        <form method="post">
+        {% comment %} <form method="post">
             {% csrf_token %}
             {% for item, details in namedic2.items %}
                 <div>
@@ -42,13 +42,45 @@
                         {{ item }}: ${{ details.price }}
                     </label>
                 </div>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
             {% comment %} <button type="submit">Submit</button> {% endcomment %}
+            {% comment %} <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                Submit
+            </button> 
+        </form>
+        <br/> {% endcomment %}
+
+
+        {% comment %} <form method="post">
+            {% csrf_token %}
+            {% for k, v in namedic3.items %}
+                <label for="{{ v }}">
+                    <input type="checkbox" id="{{ v }}" name="options" value="{{ k }}">
+                    {{k}}
+                </label><br/>
+            {% endfor %}
             <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
                 Submit
             </button> 
         </form>
-        <br/>
+        <br/> {% endcomment %}
+        
+        <form method="post">
+            {% csrf_token %}
+            {% for product in products %}
+                <div>
+                    <input type="checkbox" name="options" value="{{ product.name }}">
+                    <label>{{ product.name }} - ${{ product.price }}</label>
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:200px;">
+                    {% else %}
+                        <p>No image available</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+        
         {% include "parts/footer.html" %}
         {%endblock content%}
   </body>
