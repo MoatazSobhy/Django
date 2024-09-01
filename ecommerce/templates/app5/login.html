@@ -1,0 +1,17 @@
+{% extends "mart/base.html" %}
+
+{% block content %}
+
+<h1>Hello from app5</h1>
+<form method="POST">
+    {% csrf_token %}
+    {% comment %} <input type="text" name="Username" placeholder="username">
+    <br>
+    <input type="password" name="Password" placeholder="password">
+    <br> {% endcomment %}
+    {{lf}}
+    <input type="submit" value="Save">
+    <br>
+</from>
+{% endblock content %}
+

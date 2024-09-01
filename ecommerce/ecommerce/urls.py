@@ -28,6 +28,7 @@ urlpatterns = [
     path('ts/post/', post),
     path('', include('mart.urls')),
     path('products/', include('products.urls')),
+    path('app5/', include('app5.urls')),
 ]
 
 if settings.DEBUG:  # Serve media files only in development mode

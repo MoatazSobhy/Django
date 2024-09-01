@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'tracking_system',
     'mart.apps.MartConfig',
     'products.apps.ProductsConfig',
+    'app5.apps.App5Config',
 ]
 
 MIDDLEWARE = [
