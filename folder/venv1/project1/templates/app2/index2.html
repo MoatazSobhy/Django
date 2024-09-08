@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{%block content%} 
+
+{%for product in pro%}
+    <P><img src="{{product.image.url}}"></p>
+    <p>{{product.name}}</p>
+    <p>${{product.price}}</p>
+    <p>{{product.description}}</p>
+    <p>{{product.category}}</p>
+    <p><a href="{% url 'product'%}">View Product</a></p>
+    <br/>
+{%endfor%}
+
+{%endblock content%}

@@ -1,0 +1,26 @@
+{% extends "main/base.html" %} 
+{% load static%}
+
+{% block content %}
+<h1>This is index from templates</h1>
+{% comment %} <h2>name = {{name|capfirst|default:"Not found"|slice:":13"|length}}</h2> {% endcomment %} 
+{% comment %} <h2>name = {{name|add:" Mohamed"}}</h2> {% endcomment %}
+{% comment %} <h2>name = {{name|cut:" "}}</h2> {% endcomment %}
+{% comment %} <h2>age = {{age}}</h2> {% endcomment %}
+{% comment %} <h2>age = {{age|filesizeformat}}</h2> {% endcomment %}
+
+{% comment %} {%if name == "Moataz"%}
+    <h2>Hello</h2>
+{%elif name == "Moataz Sobhy Zaki"%}
+    <h2>Welcome, {{name}}</h2>
+{%else%}
+    <h2>Not found</h2>
+{%endif%} {% endcomment %}
+
+{% comment %} {%for x in name%}
+    <p>{{x}}</p>
+{%endfor%} {% endcomment %}
+
+<img src="{% static 'image/download.jpeg' %}" alt="No photo">
+
+{% endblock content %}

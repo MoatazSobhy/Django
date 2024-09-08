@@ -1,0 +1,53 @@
+#----------------------------------------------------
+# Moataz Sobhy Zaki
+# ---------------------------------------------------
+# 1
+# print("Hello World")
+# ---------------------------------------------------------
+# 2
+# bin_number = input("Enter a binary number: ")
+# dec_number = int(bin_number, 2)
+# print(f"The decimal binary number [{bin_number }] is [{dec_number}].")
+# -------------------------------------------------------------
+# 3
+# innumber = int(input("Enter a number: "))
+# if innumber%5 ==0 and innumber%3 == 0:
+#     print("FizzBuzz")
+# elif (innumber%3 == 0):
+#     print("Fizz")
+# elif innumber%5 == 0:
+#     print("Buzz")
+# else:
+#     print("Not Fizz or Buzz")
+# -----------------------------------------------------------
+# 4
+# from math import pi
+# radius = float(input("Enter the radius of the circle: "))
+#
+# if radius > 0:
+#     area = radius**2 * pi
+#     circumference = 2 * pi * radius
+#     print(f"The area is [{round(area,2)}] and the circumference is [{round(circumference,2)}].")
+# else:
+#     print("Please enter a positive number.")
+# ----------------------------------------------------------
+# 5
+# while True:
+#     name = input("What is your name? ")
+#     if name.isalpha() and name.strip():
+#         break
+#     else:
+#         print("Invalid")
+#
+# while True:
+#     email = input("What is your email address? ")
+#     if email:
+#         break
+#
+# print(f"Your name is [{name}] and your email is [{email}]")
+
+# -------------------------------------------------------
+# 6
+# string = "New Capital iti branch, welcome in iti, this is another iti"
+# print(string.count("iti"))
+# ---------------------------------------------------------

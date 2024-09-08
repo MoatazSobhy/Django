@@ -1,0 +1,15 @@
+{% comment %} <style>
+  body {
+    background: yellow;
+  }
+</style> {% endcomment %}
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+{%include 'main/navbar.html'%}
+
+{%block content%} 
+
+{%endblock content%} 
+
+{%include 'main/footer.html'%}

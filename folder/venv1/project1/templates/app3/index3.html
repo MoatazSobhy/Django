@@ -1,0 +1,33 @@
+# CHAT Solution
+{% extends "main/base.html" %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Display the form fields in a paragraph layout -->
+    <input type="submit" value="Submit">
+</form>
+
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+{% if message %}
+    <p style="color: green;">{{ message }}</p>
+{% endif %}
+{% endblock content %}
+
+
+
+{% comment %} {% extends "main/base.html" %}
+{% block content%}
+<form method="POST">
+    {% csrf_token %}  {% endcomment %}
+    {% comment %} <br/>
+    <input type="text" name="username" placeholder="username">
+    <br/>
+    <input type="password" name="password" placeholder="password">
+    <br/> {% endcomment %}
+    {% comment %} {{lf}}
+    <input type="submit" value="submit" >
+    <br/>
+</form>
+{% endblock content%} {% endcomment %}
